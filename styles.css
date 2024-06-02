@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+  background-image: url('plane.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  text-align: center;
+  
+}
+.title img {
+  max-width: 20%;
+  height: auto;
+}
+
+.color-container {
+  display: flex;
+  align-items: center;
+}
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.color-circle.yellow {
+  background-color: rgb(218, 250, 36);
+}
+.color-circle.blue {
+  background-color: blue;
+}
+.icon-location {
+  display: inline-flex;
+  align-items: center;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bg-danger {
+  background-color: red !important;
+}
+
+.bg-primary {
+  background-color: blue !important;
+}
+
+.icon-location {
+  margin-left: 20px;
+}
+
+.label-top {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+.color-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff0000;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f8f8f8;
+  margin-bottom: 20px;
+}
+
+.border-danger {
+  border-color: #ff0000 !important;
+}
+
+#map:hover {
+  border-color: #999;
+}
+
+#flightInfoForm {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border: 3px solid #297fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+background: #ffffffcf; 
+}
