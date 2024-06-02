@@ -16,6 +16,9 @@ This project aims to provide an educational tool for understanding graph algorit
 2. JavaScript: To implement the BFS algorithm and handle user interactions.
 3. Bootstrap: For responsive design and consistent UI components.
 4. Map Integration: To display paths and locations visually on an interactive map.
+
+## Upcoming Features:
+Database Integration: I will update soon the project with integrate with a database to manage bookings, paths, and user data more efficiently.
    
 I welcome any corrections, suggestions, or feedback to improve the project further.
 arzzpaypal@gmail.com
