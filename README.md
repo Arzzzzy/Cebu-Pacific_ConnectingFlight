@@ -18,4 +18,4 @@ This project aims to provide an educational tool for understanding graph algorit
 4. Map Integration: To display paths and locations visually on an interactive map.
    
 I welcome any corrections, suggestions, or feedback to improve the project further.
-arzzpaypal2gmail.com
+arzzpaypal@gmail.com
