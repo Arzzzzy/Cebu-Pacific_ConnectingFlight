@@ -9,20 +9,20 @@ function initMap() {
 
   // ip markers for cities in Asia
   var cities = [
-      { name: "Hong Kong", location: [22.3193, 114.1694] },
-      { name: "Tokyo", location: [35.6895, 139.6917] },
-      { name: "Seoul", location: [37.5665, 126.978] },
-      { name: "Beijing", location: [39.9042, 116.4074] },
-      { name: "Bangkok", location: [13.7563, 100.5018] },
-      { name: "Singapore", location: [1.3521, 103.8198] },
-      { name: "Manila", location: [14.5995, 120.9842] },
-      { name: "Jakarta", location: [-6.2088, 106.8456] },
-      { name: "Taipei", location: [25.033, 121.5654] },
-      { name: "Mumbai", location: [19.076, 72.8777] },
-      { name: "Dubai", location: [25.276987, 55.296249] },
-      { name: "Istanbul", location: [41.0082, 28.9784] },
-      { name: "Cairo", location: [30.0444, 31.2357] }
-  ];
+    { name: "Hong Kong", location: [22.3193, 114.1694] },
+    { name: "Tokyo", location: [35.6895, 139.6917] },
+    { name: "Seoul", location: [37.5665, 126.978] },
+    { name: "Beijing", location: [39.9042, 116.4074] },
+    { name: "Bangkok", location: [13.7563, 100.5018] },
+    { name: "Singapore", location: [1.3521, 103.8198] },
+    { name: "Manila", location: [14.5995, 120.9842] },
+    { name: "Jakarta", location: [-6.2088, 106.8456] },
+    { name: "Taipei", location: [25.033, 121.5654] },
+    { name: "Mumbai", location: [19.076, 72.8777] },
+    { name: "Dubai", location: [25.276987, 55.296249] },
+    { name: "Istanbul", location: [41.0082, 28.9784] },
+    { name: "Cairo", location: [30.0444, 31.2357] }
+];
 
   cities.forEach(function (city) {
       L.marker(city.location).addTo(map).bindPopup(city.name);
@@ -31,30 +31,70 @@ function initMap() {
   // Add flight connections between cities
   var connections = [
     { origin: "Hong Kong", destination: "Tokyo", cost: 2000, duration: "4 hours" },
+    { origin: "Tokyo", destination: "Hong Kong", cost: 2000, duration: "4 hours" },
+
+    { origin: "Hong Kong", destination: "Beijing", cost: 2000, duration: "4 hours" },
+    { origin: "Beijing", destination: "Hong Kong", cost: 2000, duration: "4 hours" },
+
     { origin: "Tokyo", destination: "Seoul", cost: 2500, duration: "2 hours" },
-    { origin: "Seoul", destination: "Beijing", cost: 1800, duration: "3.5 hours" },
+    { origin: "Seoul", destination: "Tokyo", cost: 2500, duration: "2 hours" },
+
     { origin: "Beijing", destination: "Bangkok", cost: 2200, duration: "5 hours" },
+    { origin: "Bangkok", destination: "Beijing", cost: 2200, duration: "5 hours" },
+
     { origin: "Bangkok", destination: "Singapore", cost: 1000, duration: "2 hours" },
+    { origin: "Singapore", destination: "Bangkok", cost: 1000, duration: "2 hours" },
+
     { origin: "Singapore", destination: "Manila", cost: 1200, duration: "3 hours" },
-    { origin: "Manila", destination: "Jakarta", cost: 800, duration: "1.5 hours" },
-    { origin: "Jakarta", destination: "Taipei", cost: 1800, duration: "3 hours" },
-    { origin: "Taipei", destination: "Mumbai", cost: 3000, duration: "4 hours" },
-    { origin: "Mumbai", destination: "Dubai", cost: 2500, duration: "3 hours" },
-    { origin: "Dubai", destination: "Istanbul", cost: 2800, duration: "4 hours" },
-    { origin: "Istanbul", destination: "Cairo", cost: 1500, duration: "2.5 hours" },
-    { origin: "Cairo", destination: "Hong Kong", cost: 3200, duration: "6 hours" },
-    { origin: "Beijing", destination: "Istanbul", cost: 2800, duration: "4 hours" },
-    { origin: "Istanbul", destination: "Beijing", cost: 1500, duration: "2.5 hours" },
-    { origin: "Jakarta", destination: "Dubai", cost: 3200, duration: "5 hours" },
-    { origin: "Dubai", destination: "Singapore", cost: 2000, duration: "3 hours" },
-    { origin: "Singapore", destination: "Taipei", cost: 1500, duration: "2.5 hours" },
-    { origin: "Taipei", destination: "Hong Kong", cost: 1200, duration: "2 hours" },
-    { origin: "Hong Kong", destination: "Manila", cost: 1300, duration: "2.5 hours" },
     { origin: "Manila", destination: "Singapore", cost: 1200, duration: "3 hours" },
+
+    { origin: "Jakarta", destination: "Taipei", cost: 1800, duration: "3 hours" },
+    { origin: "Taipei", destination: "Jakarta", cost: 1800, duration: "3 hours" },
+
+    { origin: "Taipei", destination: "Mumbai", cost: 3000, duration: "4 hours" },
+    { origin: "Mumbai", destination: "Taipei", cost: 3000, duration: "4 hours" },
+
+    { origin: "Mumbai", destination: "Dubai", cost: 2500, duration: "3 hours" },
+    { origin: "Dubai", destination: "Mumbai", cost: 2500, duration: "3 hours" },
+
+    { origin: "Dubai", destination: "Istanbul", cost: 2800, duration: "4 hours" },
+    { origin: "Istanbul", destination: "Dubai", cost: 2800, duration: "4 hours" },
+
+    { origin: "Istanbul", destination: "Cairo", cost: 1500, duration: "2.5 hours" },
+    { origin: "Cairo", destination: "Istanbul", cost: 1500, duration: "2.5 hours" },
+
+    { origin: "Cairo", destination: "Hong Kong", cost: 3200, duration: "6 hours" },
+    { origin: "Hong Kong", destination: "Cairo", cost: 3200, duration: "6 hours" },
+
+    { origin: "Beijing", destination: "Istanbul", cost: 2800, duration: "4 hours" },
+    { origin: "Istanbul", destination: "Beijing", cost: 2800, duration: "4 hours" },
+
+    { origin: "Dubai", destination: "Singapore", cost: 2000, duration: "3 hours" },
+    { origin: "Singapore", destination: "Dubai", cost: 2000, duration: "3 hours" },
+
+    { origin: "Taipei", destination: "Hong Kong", cost: 1200, duration: "2 hours" },
+    { origin: "Hong Kong", destination: "Taipei", cost: 1200, duration: "2 hours" },
+
+    { origin: "Hong Kong", destination: "Manila", cost: 1300, duration: "2.5 hours" },
+    { origin: "Manila", destination: "Hong Kong", cost: 1300, duration: "2.5 hours" },
+
+    { origin: "Manila", destination: "Singapore", cost: 1200, duration: "3 hours" },
+    { origin: "Singapore", destination: "Manila", cost: 1200, duration: "3 hours" },
+
+    { origin: "Manila", destination: "Tokyo", cost: 1200, duration: "3 hours" },
+    { origin: "Tokyo", destination: "Manila", cost: 1200, duration: "3 hours" },
+
     { origin: "Singapore", destination: "Bangkok", cost: 800, duration: "1.5 hours" },
+    { origin: "Bangkok", destination: "Singapore", cost: 800, duration: "1.5 hours" },
+
     { origin: "Bangkok", destination: "Dubai", cost: 2500, duration: "4 hours" },
+    { origin: "Dubai", destination: "Bangkok", cost: 2500, duration: "4 hours" },
+
     { origin: "Dubai", destination: "Mumbai", cost: 3000, duration: "4 hours" },
-    { origin: "Mumbai", destination: "Taipei", cost: 3500, duration: "5 hours" }
+    { origin: "Mumbai", destination: "Dubai", cost: 3000, duration: "4 hours" },
+
+    { origin: "Mumbai", destination: "Taipei", cost: 3500, duration: "5 hours" },
+    { origin: "Taipei", destination: "Mumbai", cost: 3500, duration: "5 hours" }
 ];
 
     //Connect cities for possible path (red line)
